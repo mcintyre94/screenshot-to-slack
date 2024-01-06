@@ -5,6 +5,8 @@ you to take a screenshot and immediately send it to a Slack channel.
 
 ## Demo
 
+https://github.com/mcintyre94/screenshot-to-slack/assets/1711350/bd1f1f99-7490-453a-89f1-4bad26aabf74
+
 ## Configuration
 
 - You will need to create a Slack bot on the workspace that you want to send
