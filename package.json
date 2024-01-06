@@ -1,0 +1,71 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "screenshot-to-slack",
+  "title": "Screenshot to Slack",
+  "description": "Send a screenshot to Slack",
+  "icon": "command-icon.png",
+  "author": "callum-mcintyre",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "screenshot",
+      "title": "Take a new screenshot to send to Slack",
+      "description": "When you take the screenshot it will be sent to Slack",
+      "mode": "no-view"
+    },
+    {
+      "name": "send",
+      "title": "Create a new Slack message using an existing screenshot",
+      "description": "Create a new Slack message using an existing screenshot",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "imagePath",
+          "type": "text",
+          "placeholder": "~/images/myimage.png",
+          "required": false
+        }
+      ],
+      "preferences": [
+        {
+          "name": "slackToken",
+          "title": "Slack Bot Token",
+          "placeholder": "xoxb-",
+          "description": "A bot token for a Slack app, which should start xoxb-",
+          "required": true,
+          "type": "password"
+        },
+        {
+          "name": "slackChannelId",
+          "title": "Slack Channel ID",
+          "placeholder": "C...",
+          "description": "Channel ID, which starts with a C. You can see this in the Slack channel UI",
+          "required": true,
+          "type": "textfield"
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.64.4",
+    "@slack/bolt": "^3.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.27",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
